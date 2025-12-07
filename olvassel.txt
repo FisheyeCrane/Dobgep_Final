@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------
+A WEBOLDAL URL CÍME: https://fisheyecrane.github.io/Dobgep_Final 
+KÉSZÍTETTE: Kukovecz Áron
+NEPTUN KÓD: KSEV72
+--------------------------------------------------------------------------
+
+1. A PROJEKT LEÍRÁSA
+Ez a weboldal egy interaktív, böngészőben futtatható dobgép (step sequencer). 
+A felhasználó saját ritmusokat hozhat létre 16 ütemen keresztül, különböző 
+dobhangok kombinálásával. 
+
+A projekt két fő JavaScript fájlt tartalmaz:
+
+1. js/loops.js (A dobgép logikája):
+   - Ez a fájl felel a zenei ütemezésért és a hangok lejátszásáért.
+   - A `BASE_PATTERNS` objektum tárolja az alapértelmezett ritmusokat.
+   - A `startLoop` függvény egy `setInterval` segítségével ütemezi a lejátszást a megadott BPM(percenkénti ütemszám) alapján.
+   - A `playStep` függvény játssza le az aktuális lépéshez tartozó hangfájlokat
+   - A `recomputeTrackPattern` függvény dinamikusan frissíti a lejátszandó mintát, amikor a felhasználó a HTML gombokra kattint.
+
+2. js/form.js (Űrlap validáció):
+   - A Kapcsolat oldalon található űrlap ellenőrzését végzi natív JavaScripttel.
+   - Az űrlap elküldésekor (`submit` esemény) megakadályozza az alapértelmezett újratöltést (`preventDefault`).
+   - 5 mezőt ellenőriz egyedileg: Név (nem lehet üres), Email (Regex mintaillesztés), Életkor (számérték és minimum vizsgálat), Rádiógombok (kiválasztás ellenőrzése ciklussal), Checkbox (bejelölés ellenőrzése).
+   - Hiba esetén a megfelelő `span` elemekbe írja ki a hibaüzenetet.
+
+Használt egyedi fonttípus és annak helye:
+- Font neve: Bitcount Prop Single
+- Forrás: Google Fonts
+- Helye a kódban: 
+  1. HTML <head> részében linkelve (minden HTML fájlban).
+  2. A `style.css` fájlban a `:root` szelektor alatt a `--font-main` változóban definiálva.
+
+Felhasznált külső források megjelölése:
+1. Google Fonts: A "Bitcount Prop Single" betűtípus.
+2. Wikipédia: A hangszerek (dobinfo.html) rövid leírásaihoz és a képek illusztrációjához használt információk.
+3. A dob ikonok: (bass-drum.png, snare.png, stb.) forrása:https://www.flaticon.com/authors/freepik
+4. AI Asszisztens (Gemini/Perplexity): Segítség az űrlap validációs Regex kódjának pontosításában, a CSS file alapjának a generálásában és a Dobgép javascriptes megoldásaiban
+5. a faviconhoz használt kód forrása:https://www.w3schools.com/html/html_favicon.asp
+

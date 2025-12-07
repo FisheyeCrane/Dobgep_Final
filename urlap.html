@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kapcsolat - Dobgép</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="images/dob_favicon.png">
+
+</head>
+<body>
+  <header>
+    <h1>Kapcsolat</h1>
+    <p>Küldj visszajelzést vagy rendelj egyedi ütemet!</p>
+    
+    <nav>
+      <a href="index.html" class="nav-link">← Vissza a Dobgéphez</a>
+      <a href="sugo.html" class="nav-link">Súgó</a>
+      <a href="urlap.html" class="nav-link active">Kapcsolat</a>
+      <a href="dobinfo.html" class="nav-link">Hangszerek</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="feedback-form">
+      <form id="contactForm" novalidate>
+        
+        <div class="form-group">
+          <label for="name">Teljes név:</label>
+          <input type="text" id="name" name="name" placeholder="Pl. Kiss János" required>
+          <span class="error-msg" id="name-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail cím:</label>
+          <input type="email" id="email" name="email" placeholder="pelda@mail.com" required>
+          <span class="error-msg" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Életkor:</label>
+          <input type="number" id="age" name="age" min="10" max="99" placeholder="18">
+          <span class="error-msg" id="age-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Mikor jött ki a kedvenc albumod?</label>
+          <input type="date" id="date" name="date">
+          <span class="error-msg" id="date-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Mennyire tetszik az oldal?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="rating" value="1"> 1</label>
+            <label><input type="radio" name="rating" value="2"> 2</label>
+            <label><input type="radio" name="rating" value="3"> 3</label>
+            <label><input type="radio" name="rating" value="4"> 4</label>
+            <label><input type="radio" name="rating" value="5"> 5</label>
+          </div>
+          <span class="error-msg" id="rating-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="color">Kedvenc színed:</label>
+          <input type="color" id="color" name="color" value="#10b981">
+        </div>
+
+        <div class="form-group">
+          <label for="review">Visszajelzés:</label>
+          <textarea id="review" name="review" rows="4" placeholder="Ide írhatod a véleményedet vagy javaslataidat..."></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="terms" name="terms">
+          <label for="terms">Elfogadom az adatkezelési feltételeket</label>
+        </div>
+        <span class="error-msg" id="terms-error"></span>
+
+        <button type="submit" id="submit-btn">Küldés</button>
+      </form>
+      <div id="success-message" style="display:none; text-align:center; margin-top:1rem; color:#10b981;">
+        Sikeres küldés!
+      </div>
+    </section>
+  </main>
+
+  <script src="js/form.js"></script>
+</body>
+</html>

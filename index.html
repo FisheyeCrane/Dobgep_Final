@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Dobgép</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" type="image/x-icon" href="images/dob_favicon.png">
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="audio/kick.mp3" as="audio"/>
+  <link rel="preload" href="audio/snare.mp3" as="audio"/>
+  <link rel="preload" href="audio/closedhat.mp3" as="audio"/>
+  <link rel="preload" href="audio/openhat.mp3" as="audio"/>
+</head>
+<body>
+  <header>
+    <h1>Dobgép</h1>
+    <p>Kattints az ikonokra és építs egy ismétlődő dobritmust.</p>
+
+    <nav>
+    <a href="index.html" class="nav-link active">Dobgép</a>
+    <a href="sugo.html" class="nav-link">Súgó</a>
+    <a href="urlap.html" class="nav-link">Kapcsolat</a>
+    <a href="dobinfo.html" class="nav-link">Hangszerek</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="controls">
+      <label for="bpm">BPM:</label>
+      <input id="bpm" type="range" min="60" max="160" value="100"/>
+      <span id="bpm-value">100</span>
+      <button id="play-btn">Play</button>
+      <button id="stop-btn">Stop</button>
+      <button id="clear-btn">Clear</button>
+    </section>
+
+    <section id="drumparts">
+      <!-- Kick -->
+      <article class="character" data-track="kick">
+        <div class="avatar">
+          <img src="images/bass-drum.png" alt="lábdob"/>
+        </div>
+        <h2>Lábdob</h2>
+        <div class="icons">
+          <button class="sound-icon" data-sound="pattern1">●</button>
+          <button class="sound-icon" data-sound="pattern2">●</button>
+          <button class="sound-icon" data-sound="pattern3">●</button>
+        </div>
+      </article>
+
+      <!-- Snare -->
+      <article class="character" data-track="snare">
+        <div class="avatar">
+          <img src="images/snare.png" alt="pergő"/>
+        </div>
+        <h2>Pergő</h2>
+        <div class="icons">
+          <button class="sound-icon" data-sound="pattern1">●</button>
+          <button class="sound-icon" data-sound="pattern2">●</button>
+          <button class="sound-icon" data-sound="pattern3">●</button>
+        </div>
+      </article>
+
+      <!-- Closed Hi-Hat -->
+      <article class="character" data-track="closedhat">
+        <div class="avatar">
+          <img src="images/hi-hat_closed.png" alt="lábcintányér (zárt)"/>
+        </div>
+        <h2>Lábcintányér (zárt)</h2>
+        <div class="icons">
+          <button class="sound-icon" data-sound="pattern1">●</button>
+          <button class="sound-icon" data-sound="pattern2">●</button>
+          <button class="sound-icon" data-sound="pattern3">●</button>
+        </div>
+      </article>
+
+      <!-- Open Hi-Hat  -->
+      <article class="character" data-track="openhat">
+        <div class="avatar">
+          <img src="images/hi-hat_open.png" alt="lábcintányér (nyílt)"/>
+        </div>
+        <h2>Lábcintányér (nyílt)</h2>
+        <div class="icons">
+          <button class="sound-icon" data-sound="pattern1">●</button>
+          <button class="sound-icon" data-sound="pattern2">●</button>
+          <button class="sound-icon" data-sound="pattern3">●</button>
+        </div>
+      </article>
+    </section>
+
+      <!--aktív negyed jelző-->
+    <section id="pattern-visual">
+      <h2>Negyedek</h2>
+      <div id="steps"></div>
+    </section>
+  </main>
+
+  <script src="js/loops.js"></script>
+</body>
+</html>
